@@ -31,10 +31,10 @@ public class SummaryActivity extends AppCompatActivity {
 
         DecimalFormat f = new DecimalFormat("0.00");
 
-        mOrderTotalTextView.setText(R.string.order_total + String.valueOf(f.format(intentFromOrder.getDoubleExtra("orderTotal", 0.0f))));
-        mItemsOrderedTextView.setText(R.string.items_ordered + intentFromOrder.getIntExtra("itemsOrdered", 0));
-        mSubtotalTextView.setText(R.string.subtotal + intentFromOrder.getIntExtra("subtotal", 0));
-        mTaxTextView.setText(R.string.tax + intentFromOrder.getIntExtra("tax", 0));
+        mOrderTotalTextView.setText(getString(R.string.order_total) + " $" + f.format(intentFromOrder.getDoubleExtra("orderTotal", 0.0f)));
+        mItemsOrderedTextView.setText(getString(R.string.items_ordered) + " " + intentFromOrder.getIntExtra("itemsOrdered", 0));
+        mSubtotalTextView.setText(getString(R.string.subtotal) + " $" + f.format(intentFromOrder.getDoubleExtra("subtotal", 0.0f)));
+        mTaxTextView.setText(getString(R.string.tax) + " $" + f.format(intentFromOrder.getDoubleExtra("tax", 0.0f)));
     }
 
     protected void startNewOrder(View v)

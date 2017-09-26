@@ -19,7 +19,7 @@ public class OrderActivity extends AppCompatActivity {
     private EditText mMediumDrinksEditText;
     private EditText mLargeDrinksEditText;
 
-    private Order mOrder;
+    private Order mOrder = new Order();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +38,28 @@ public class OrderActivity extends AppCompatActivity {
         mSmallDrinksEditText = (EditText) findViewById(R.id.smallEditText);
         mMediumDrinksEditText = (EditText) findViewById(R.id.mediumEditText);
         mLargeDrinksEditText = (EditText) findViewById(R.id.largeEditText);
-
-        mOrder = new Order();
     }
 
     protected void placeOrder(View v)
     {
-        int numDoubleDouble = Integer.parseInt(mDoubleDoubleEditText.getText().toString());
-        int numCheeseburgers = Integer.parseInt(mCheeseburgerEditText.getText().toString());
-        int numFrenchFries = Integer.parseInt(mFrenchFriesEditText.getText().toString());
-        int numShakes = Integer.parseInt(mShakesEditText.getText().toString());
-        int numSmallDrinks = Integer.parseInt(mSmallDrinksEditText.getText().toString());
-        int numMediumDrinks = Integer.parseInt(mMediumDrinksEditText.getText().toString());
-        int numLargeDrinks = Integer.parseInt(mLargeDrinksEditText.getText().toString());
+        int numDoubleDouble = 0, numCheeseburgers = 0, numFrenchFries = 0,
+            numShakes = 0, numSmallDrinks = 0, numMediumDrinks = 0, numLargeDrinks = 0;
+
+        if (mDoubleDoubleEditText.getText().toString() != null)
+            numDoubleDouble = Integer.parseInt(mDoubleDoubleEditText.getText().toString());
+        if (mCheeseburgerEditText.getText().toString() != null)
+            numCheeseburgers = Integer.parseInt(mCheeseburgerEditText.getText().toString());
+        if (mFrenchFriesEditText.getText() != null)
+            numFrenchFries = Integer.parseInt(mFrenchFriesEditText.getText().toString());
+        if (mShakesEditText.getText() != null)
+            numShakes = Integer.parseInt(mShakesEditText.getText().toString());
+        if (mSmallDrinksEditText.getText() != null)
+            numSmallDrinks = Integer.parseInt(mSmallDrinksEditText.getText().toString());
+        if (mMediumDrinksEditText.getText() != null)
+            numMediumDrinks = Integer.parseInt(mMediumDrinksEditText.getText().toString());
+        if (mLargeDrinksEditText.getText() != null)
+            numLargeDrinks = Integer.parseInt(mLargeDrinksEditText.getText().toString());
+
         int itemsOrdered = numDoubleDouble + numCheeseburgers + numFrenchFries + numShakes +
                            numSmallDrinks + numMediumDrinks + numLargeDrinks;
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textViewPadding">12dp</dimen>
+    <dimen name="textSizeLarge">20sp</dimen>
+    <dimen name="orderButtonMargin">30dp</dimen>
+    <dimen name="editTextMargin">20dp</dimen>
+    <dimen name="summaryTitleMarginTop">120dp</dimen>
+    <dimen name="summaryTitleMarginBottom">40dp</dimen>
+    <dimen name="summaryBodyMarginLeft">10dp</dimen>
+    <dimen name="startNewOrderButtonMarginTop">30dp</dimen>
+</resources>
