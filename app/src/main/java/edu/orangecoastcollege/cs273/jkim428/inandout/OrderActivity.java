@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
 
+/**
+ * Controller for OrderActivity.
+ * Takes user inputs about order and passes calculated order details to SummaryActivity.
+ */
 public class OrderActivity extends AppCompatActivity {
 
     private EditText mDoubleDoubleEditText;
@@ -18,7 +21,6 @@ public class OrderActivity extends AppCompatActivity {
     private EditText mSmallDrinksEditText;
     private EditText mMediumDrinksEditText;
     private EditText mLargeDrinksEditText;
-
     private Order mOrder = new Order();
 
     @Override
@@ -45,19 +47,19 @@ public class OrderActivity extends AppCompatActivity {
         int numDoubleDouble = 0, numCheeseburgers = 0, numFrenchFries = 0,
             numShakes = 0, numSmallDrinks = 0, numMediumDrinks = 0, numLargeDrinks = 0;
 
-        if (mDoubleDoubleEditText.getText().toString() != null)
+        if (!mDoubleDoubleEditText.getText().toString().trim().isEmpty())
             numDoubleDouble = Integer.parseInt(mDoubleDoubleEditText.getText().toString());
-        if (mCheeseburgerEditText.getText().toString() != null)
+        if (!mCheeseburgerEditText.getText().toString().trim().isEmpty())
             numCheeseburgers = Integer.parseInt(mCheeseburgerEditText.getText().toString());
-        if (mFrenchFriesEditText.getText() != null)
+        if (!mFrenchFriesEditText.getText().toString().trim().isEmpty())
             numFrenchFries = Integer.parseInt(mFrenchFriesEditText.getText().toString());
-        if (mShakesEditText.getText() != null)
+        if (!mShakesEditText.getText().toString().trim().isEmpty())
             numShakes = Integer.parseInt(mShakesEditText.getText().toString());
-        if (mSmallDrinksEditText.getText() != null)
+        if (!mSmallDrinksEditText.getText().toString().trim().isEmpty())
             numSmallDrinks = Integer.parseInt(mSmallDrinksEditText.getText().toString());
-        if (mMediumDrinksEditText.getText() != null)
+        if (!mMediumDrinksEditText.getText().toString().trim().isEmpty())
             numMediumDrinks = Integer.parseInt(mMediumDrinksEditText.getText().toString());
-        if (mLargeDrinksEditText.getText() != null)
+        if (!mLargeDrinksEditText.getText().toString().trim().isEmpty())
             numLargeDrinks = Integer.parseInt(mLargeDrinksEditText.getText().toString());
 
         int itemsOrdered = numDoubleDouble + numCheeseburgers + numFrenchFries + numShakes +
@@ -80,4 +82,3 @@ public class OrderActivity extends AppCompatActivity {
         startActivity(summaryIntent);
     }
 }
-

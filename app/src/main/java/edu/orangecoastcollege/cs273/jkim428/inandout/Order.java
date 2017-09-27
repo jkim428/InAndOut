@@ -1,9 +1,9 @@
 package edu.orangecoastcollege.cs273.jkim428.inandout;
 
 /**
- * Created by jiwoongkim on 2017. 9. 25..
+ * A model class that handles calculations of
+ * subtotal, tax and total amount for each order.
  */
-
 public class Order {
 
     private static final double PRICE_DOUBLE_DOUBLE = 3.60;
@@ -90,6 +90,10 @@ public class Order {
         mLargeDrinks = largeDrinks;
     }
 
+    /**
+     * Calculates the subtotal for the order.
+     * @return subtotal amount
+     */
     public double calculateSubtotal() {
         return PRICE_DOUBLE_DOUBLE * mDoubleDouble + PRICE_CHEESEBURGER * mCheeseburgers +
                 PRICE_FRENCH_FRIES * mFrenchFries + PRICE_SHAKE * mShakes +
@@ -97,10 +101,18 @@ public class Order {
                 PRICE_LARGE_DRINK * mLargeDrinks;
     }
 
+    /**
+     * Calculates the tax amount for the order.
+     * @return tax amount
+     */
     public double calculateTax(){
         return TAX_RATE * calculateSubtotal();
     }
 
+    /**
+     * Calculates the total amount for the order.
+     * @return total amount
+     */
     public double calculateTotal(){
         return calculateSubtotal() + calculateTax();
     }

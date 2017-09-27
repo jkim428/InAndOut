@@ -10,6 +10,10 @@ import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 
+/**
+ * Controller for SummaryActivity.
+ * Displays order details received from OrderActivity.
+ */
 public class SummaryActivity extends AppCompatActivity {
 
     private TextView mOrderTotalTextView;
